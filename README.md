@@ -1,22 +1,40 @@
 <div align=center>
-<h1> ResAdapter for ComfyUI </h1>
+
+## ResAdapter for ComfyUI
+
+We provide ComfyUI-ResAdapter node to help users to use ResAdapter in ComfyUI.
+
+⭐ If ResAdapter is helpful to your images or projects, please help star this repo and [bytedance/res-adapter](https://github.com/bytedance/res-adapter). Thanks! 🤗
+
+
 </div>
 
-ResAdapter github link: https://github.com/bytedance/res-adapter
+## Installation
 
+```bash 
+# Step1: Clone ComfyUI-ResAdapter
+git clone git@code.byted.org:lab-cv/ComfyUI-ResAdapter.git
 
-🔥 We are pleased to announce that [ComfyUI-ResAdapter](https://github.com/jiaxiangc/ComfyUI-ResAdapter) is complete and users can install it to load the weights of ResAdapter.
+# Step2: Move it to ComfyUI/custom_node
+mv ComfyUI-ResAdapter ComfyUI/custom_node/
 
-🧊 However, due to the internal arrangement of our company, we will postpone open-sourcing the code of ComfyUI-ResAdapter for some time. We will open source it as soon as possible, please be patient.
+# Step3: Select Load ResAdapter Node in ComfyUI. We can use it like LoRA Loader.
+```
 
+## Download Model
+
+We provide script for automatically downloading resadapter model from huggingface in `__init__.py`. If you can not connect with [huggingface.com](https://huggingface.co/), you can directly download model in [huggingface](https://huggingface.co/jiaxiangc/res-adapter). 
+
+If downloading models take longger time, please checkout your connection with huggingface.com.
 
 ## Examples
 
-**ResAdapter with SDXL-Lightning**
-
-<img src="misc/resadapter-sdxl-384x512.png" width=100%>
-
-
-**ResAdapter with Dreamlike-Diffusion-1.0**
-
+**ResAdapter with [dreamlike-diffusion-1.0](https://huggingface.co/dreamlike-art/dreamlike-diffusion-1.0) workflow.**
 <img src="misc/resadapter-1024x1024.png" witdh=100%>
+
+
+
+
+
+
+
