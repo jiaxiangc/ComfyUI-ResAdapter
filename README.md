@@ -30,6 +30,9 @@ If downloading models take longger time, please checkout your connection with hu
 ## Examples
 
 **ResAdapter with [dreamlike-diffusion-1.0](https://huggingface.co/dreamlike-art/dreamlike-diffusion-1.0) workflow.**
+
+https://github.com/jiaxiangc/ComfyUI-ResAdapter/assets/162297627/adc6ec6d-bc43-4ecc-9d3a-2b3c31aeef6c
+
 <img src="misc/resadapter-1024x1024.png" witdh=100%>
 
 
