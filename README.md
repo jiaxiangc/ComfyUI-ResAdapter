@@ -10,8 +10,8 @@ We provide ComfyUI-ResAdapter node to help users to use ResAdapter in ComfyUI.
 # Step1: Clone ComfyUI-ResAdapter
 git clone git@github.com:jiaxiangc/ComfyUI-ResAdapter.git
 
-# Step2: Move it to ComfyUI/custom_node
-mv ComfyUI-ResAdapter ComfyUI/custom_node/
+# Step2: Move it to ComfyUI/custom_nodes
+mv ComfyUI-ResAdapter ComfyUI/custom_nodes/
 
 # Step3: Select Load ResAdapter Node in ComfyUI. We can use it like LoRA Loader.
 ```
