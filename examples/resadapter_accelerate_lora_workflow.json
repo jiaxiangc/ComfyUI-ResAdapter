@@ -1,0 +1,1187 @@
+{
+  "last_node_id": 46,
+  "last_link_id": 84,
+  "nodes": [
+    {
+      "id": 18,
+      "type": "CLIPSetLastLayer",
+      "pos": [
+        710,
+        480
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 65
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            66
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPSetLastLayer"
+      },
+      "widgets_values": [
+        -1
+      ]
+    },
+    {
+      "id": 15,
+      "type": "KSampler",
+      "pos": [
+        1350,
+        300
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 38
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 73,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 74
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            32
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        110,
+        "fixed",
+        5,
+        1,
+        "lcm",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "type": "VAEDecode",
+      "pos": [
+        1690,
+        300
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 32
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            34
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 30,
+      "type": "VAEDecode",
+      "pos": [
+        1717.069744819997,
+        1117.6284572744964
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 48
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            50
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 39,
+      "type": "Text box",
+      "pos": [
+        773.9601322021492,
+        777.7997580718994
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            63,
+            68
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": " Negative prompt",
+      "properties": {
+        "Node name for S&R": "Text box"
+      },
+      "widgets_values": [
+        "(Disastrous:1.2) composition, (awkward:1.1) proportions, (unrefined:1.1) style, (unimpressive:1.2) technique, (unengaging:1.3) subject matter, (lack of skill:1.2), (sloppy execution:1.2), (clashing:1.1) patterns, (incoherent:1.3) theme, (distorted:1.2) perspective, (amateurish:1.3) execution, (lack of creativity:1.2), (messy:1.1) arrangement, (lack of impact:1.1), (poorly defined:1.1) shapes, (lack of originality:1.1), (low resolution:1.3), (noisy:1.3), (blurry:1.2), (grainy:1.3), (unclear subject:1.4), (subpar:1.2), (bad camera angle), (ugly anatomy feature:1.3), (poorly chosen lighting:1.3), (unattractive color palette:1.2), (muddled details:1.2), (lack of depth:1.1), (unappealing texture:1.1)."
+      ]
+    },
+    {
+      "id": 44,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1090,
+        300
+      ],
+      "size": {
+        "0": 217.99098205566406,
+        "1": 54.163631439208984
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 80
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 64,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            73
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 43,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1090,
+        400
+      ],
+      "size": {
+        "0": 217.99098205566406,
+        "1": 54.163631439208984
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 81
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 63,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            74
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 45,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1117.069744819997,
+        1227.6284572744964
+      ],
+      "size": {
+        "0": 217.99098205566406,
+        "1": 54.163631439208984
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 79
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 68,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            72
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 46,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1117.069744819997,
+        1117.6284572744964
+      ],
+      "size": {
+        "0": 217.99098205566406,
+        "1": 54.163631439208984
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 78
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 67,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            71
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "KSampler",
+      "pos": [
+        1377.069744819997,
+        1117.6284572744964
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 84
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 71
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 72
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 58
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            48
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        110,
+        "fixed",
+        5,
+        1,
+        "lcm",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 27,
+      "type": "CLIPSetLastLayer",
+      "pos": [
+        737.0697448199966,
+        1467.6284572744964
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            76
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPSetLastLayer"
+      },
+      "widgets_values": [
+        -1
+      ]
+    },
+    {
+      "id": 26,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        367.06974481999697,
+        1117.6284572744964
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            82
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            75
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            49
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "dreamlike-diffusion-1.0.safetensors"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "Text box",
+      "pos": [
+        353.96013220214905,
+        777.7997580718994
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            64,
+            67
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Positive prompt",
+      "properties": {
+        "Node name for S&R": "Positive Prompt"
+      },
+      "widgets_values": [
+        "Award-winning photo of a mystical fox girl (fox:1.3) in a serene forest clearing,(sunlight:1.2) filtering through the trees,ethereal,enchanting,vibrant orange fur,piercing (amber:1.4) eyes,delicate floral crown,(flowing:1.1) gown,surrounded by a gentle breeze,(whispering:1.2) leaves,magical atmosphere,captured by renowned photographer (Emily Thompson:1.2) using a Nikon D850,creating a dreamlike and captivating image"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "SaveImage",
+      "pos": [
+        1930,
+        300
+      ],
+      "size": {
+        "0": 322.2373046875,
+        "1": 365.31610107421875
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 34
+        }
+      ],
+      "title": "Baseline Images",
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "SaveImage",
+      "pos": [
+        1957.069744819997,
+        1117.6284572744964
+      ],
+      "size": {
+        "0": 322.2373046875,
+        "1": 365.31610107421875
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 50
+        }
+      ],
+      "title": "ResAdapter Images",
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "ResAdapterLoader",
+      "pos": [
+        737.0697448199966,
+        1297.6284572744964
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 82
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 76
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            83
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            77
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ResAdapterLoader"
+      },
+      "widgets_values": [
+        "resadapter_v1_sd1.5",
+        0.6,
+        1
+      ]
+    },
+    {
+      "id": 22,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1204,
+        838
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            31,
+            58
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        960,
+        2
+      ]
+    },
+    {
+      "id": 35,
+      "type": "LoraLoader",
+      "pos": [
+        737.0697448199966,
+        1117.6284572744964
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 83
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 77
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            84
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            78,
+            79
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "lcm-lora-sdv15.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 24,
+      "type": "LoraLoader",
+      "pos": [
+        710,
+        300
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 37
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 66
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            80,
+            81
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "lcm-lora-sdv15.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 17,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        370,
+        300
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            65
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            33
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "dreamlike-diffusion-1.0.safetensors"
+      ]
+    }
+  ],
+  "links": [
+    [
+      31,
+      22,
+      0,
+      15,
+      3,
+      "LATENT"
+    ],
+    [
+      32,
+      15,
+      0,
+      21,
+      0,
+      "LATENT"
+    ],
+    [
+      33,
+      17,
+      2,
+      21,
+      1,
+      "VAE"
+    ],
+    [
+      34,
+      21,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      17,
+      0,
+      24,
+      0,
+      "MODEL"
+    ],
+    [
+      38,
+      24,
+      0,
+      15,
+      0,
+      "MODEL"
+    ],
+    [
+      48,
+      25,
+      0,
+      30,
+      0,
+      "LATENT"
+    ],
+    [
+      49,
+      26,
+      2,
+      30,
+      1,
+      "VAE"
+    ],
+    [
+      50,
+      30,
+      0,
+      32,
+      0,
+      "IMAGE"
+    ],
+    [
+      58,
+      22,
+      0,
+      25,
+      3,
+      "LATENT"
+    ],
+    [
+      63,
+      39,
+      0,
+      43,
+      1,
+      "STRING"
+    ],
+    [
+      64,
+      38,
+      0,
+      44,
+      1,
+      "STRING"
+    ],
+    [
+      65,
+      17,
+      1,
+      18,
+      0,
+      "CLIP"
+    ],
+    [
+      66,
+      18,
+      0,
+      24,
+      1,
+      "CLIP"
+    ],
+    [
+      67,
+      38,
+      0,
+      46,
+      1,
+      "STRING"
+    ],
+    [
+      68,
+      39,
+      0,
+      45,
+      1,
+      "STRING"
+    ],
+    [
+      71,
+      46,
+      0,
+      25,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      72,
+      45,
+      0,
+      25,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      73,
+      44,
+      0,
+      15,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      74,
+      43,
+      0,
+      15,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      75,
+      26,
+      1,
+      27,
+      0,
+      "CLIP"
+    ],
+    [
+      76,
+      27,
+      0,
+      34,
+      1,
+      "CLIP"
+    ],
+    [
+      77,
+      34,
+      1,
+      35,
+      1,
+      "CLIP"
+    ],
+    [
+      78,
+      35,
+      1,
+      46,
+      0,
+      "CLIP"
+    ],
+    [
+      79,
+      35,
+      1,
+      45,
+      0,
+      "CLIP"
+    ],
+    [
+      80,
+      24,
+      1,
+      44,
+      0,
+      "CLIP"
+    ],
+    [
+      81,
+      24,
+      1,
+      43,
+      0,
+      "CLIP"
+    ],
+    [
+      82,
+      26,
+      0,
+      34,
+      0,
+      "MODEL"
+    ],
+    [
+      83,
+      34,
+      0,
+      35,
+      0,
+      "MODEL"
+    ],
+    [
+      84,
+      35,
+      0,
+      25,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Common node",
+      "bounding": [
+        336,
+        693,
+        1221,
+        307
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": " Accelerate LoRA baseline",
+      "bounding": [
+        331,
+        214,
+        1939,
+        460
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "Accelerate LoRA resadapter",
+      "bounding": [
+        333,
+        1028,
+        1962,
+        503
+      ],
+      "color": "#88A",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
