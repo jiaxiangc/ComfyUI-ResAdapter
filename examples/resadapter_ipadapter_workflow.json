@@ -667,6 +667,40 @@
       ]
     },
     {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        680,
+        1280
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2,
+            56
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        768,
+        1024,
+        2
+      ]
+    },
+    {
       "id": 30,
       "type": "SaveImage",
       "pos": [
@@ -704,7 +738,7 @@
         "1": 98
       },
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "outputs": [
         {
@@ -740,61 +774,58 @@
       ]
     },
     {
-      "id": 3,
-      "type": "KSampler",
+      "id": 32,
+      "type": "ResAdapterLoader",
       "pos": [
-        679.5016555786129,
-        859.6486389160159
+        -124.35307800292988,
+        2019.2323541259768
       ],
       "size": {
         "0": 315,
-        "1": 262
+        "1": 126
       },
       "flags": {},
-      "order": 12,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": 28
+          "link": 41
         },
         {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 4
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 6
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 2
+          "name": "clip",
+          "type": "CLIP",
+          "link": 43
         }
       ],
       "outputs": [
         {
-          "name": "LATENT",
-          "type": "LATENT",
+          "name": "MODEL",
+          "type": "MODEL",
           "links": [
-            7
+            42
           ],
+          "shape": 3,
           "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            44,
+            45
+          ],
+          "shape": 3,
+          "slot_index": 1
         }
       ],
       "properties": {
-        "Node name for S&R": "KSampler"
+        "Node name for S&R": "ResAdapterLoader"
       },
       "widgets_values": [
-        36,
-        "fixed",
-        25,
-        7.5,
-        "ddim",
-        "normal",
+        "resadapter_v2_sd1.5",
+        1,
         1
       ]
     },
@@ -858,93 +889,62 @@
       ]
     },
     {
-      "id": 32,
-      "type": "ResAdapterLoader",
+      "id": 3,
+      "type": "KSampler",
       "pos": [
-        -124.35307800292988,
-        2019.2323541259768
+        679.5016555786129,
+        859.6486389160159
       ],
       "size": {
         "0": 315,
-        "1": 126
+        "1": 262
       },
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
           "name": "model",
           "type": "MODEL",
-          "link": 41
+          "link": 28
         },
         {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 43
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            42
-          ],
-          "shape": 3,
-          "slot_index": 0
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
         },
         {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            44,
-            45
-          ],
-          "shape": 3,
-          "slot_index": 1
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2
         }
       ],
-      "properties": {
-        "Node name for S&R": "ResAdapterLoader"
-      },
-      "widgets_values": [
-        "resadapter_v2_sd1.5",
-        1,
-        1
-      ]
-    },
-    {
-      "id": 5,
-      "type": "EmptyLatentImage",
-      "pos": [
-        680,
-        1280
-      ],
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
       "outputs": [
         {
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            2,
-            56
+            7
           ],
           "slot_index": 0
         }
       ],
       "properties": {
-        "Node name for S&R": "EmptyLatentImage"
+        "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        768,
-        1024,
-        2
+        36,
+        "fixed",
+        25,
+        7.5,
+        "ddim",
+        "normal",
+        1
       ]
     }
   ],
