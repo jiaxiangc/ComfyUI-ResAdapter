@@ -30,23 +30,25 @@ There are demo videos for helping users to know how to use ComfyUI-ResAdapter, w
 - workflow: [resadapter_text_to_image_workflow](examples/resadapter_text_to_image_workflow.json). 
 - models: [dreamlike-diffusion-1.0](https://huggingface.co/dreamlike-art/dreamlike-diffusion-1.0)
 
+https://github.com/jiaxiangc/ComfyUI-ResAdapter/assets/162297627/82453931-23de-4f72-8a9c-1053c4c8d81a
 
 ### ControlNet
 
 - workflow: [resadapter_controlnet_workflow](examples/resadapter_controlnet_workflow.json). 
 - models: [stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5), [sd-controlnet-canny](https://huggingface.co/lllyasviel/sd-controlnet-canny)
 
+https://github.com/jiaxiangc/ComfyUI-ResAdapter/assets/162297627/aab14d91-f68f-4415-b947-fd99662ca2ca
 
 ### IPAdapter
 
 - workflow: [resadapter_ipadapter_workflow](examples/resadapter_ipadapter_workflow.json). 
 - models: [stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5), [IP-Adapter](https://huggingface.co/h94/IP-Adapter)
 
-
+https://github.com/jiaxiangc/ComfyUI-ResAdapter/assets/162297627/92bcfc11-b1d5-4909-9e6d-7e1978c948c2
 
 ### Accelerate LoRA
 
 - workflow: [resadapter_accelerate_lora_workflow](examples/resadapter_accelerate_lora_workflow.json). 
 - models: [stable-diffusion-v1-5](https://huggingface.co/runwayml/stable-diffusion-v1-5), [lcm-lora-sdv1-5](https://huggingface.co/latent-consistency/lcm-lora-sdv1-5)
 
-
+https://github.com/jiaxiangc/ComfyUI-ResAdapter/assets/162297627/46ce4224-ab4d-4890-abc8-00b716dcb29a
