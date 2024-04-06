@@ -14,8 +14,8 @@ models_dir = os.path.join(base_path, "models")
 
 os.makedirs(models_dir, exist_ok=True)
 
-MODEL_LIST = ["resadapter_v1_sd1.5", "resadapter_v1_sd1.5_interpolation", "resadapter_v1_sd1.5_extrapolation", 
-              "resadapter_v1_sdxl", "resadapter_v1_sdxl_interpolation", "resadapter_v1_sdxl_extrapolation"]
+MODEL_LIST = ["resadapter_v1_sd1.5", "resadapter_v1_sd1.5_interpolation", "resadapter_v1_sd1.5_extrapolation", "resadapter_v2_sd1.5",
+              "resadapter_v1_sdxl", "resadapter_v1_sdxl_interpolation", "resadapter_v1_sdxl_extrapolation", "resadapter_v2_sdxl"]
 
 for MODEL in MODEL_LIST:
     if not os.path.exists(os.path.join(models_dir, MODEL)):
