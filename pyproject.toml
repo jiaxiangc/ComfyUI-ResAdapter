@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-resadapter"
+description = "We provide ComfyUI-ResAdapter node to help users to use [a/ResAdapter](https://github.com/bytedance/res-adapter) in ComfyUI."
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/jiaxiangc/ComfyUI-ResAdapter"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-ResAdapter"
+Icon = ""
